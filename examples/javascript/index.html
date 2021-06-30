@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>@small-tech/spinners JavaScript example</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+    pre {
+      background: black;
+      color: white;
+      font-size: 1.25em;
+      padding: 1em;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>@small-tech/spinners JavaScript example</h1>
+
+  <h2>Lines</h2>
+  <div id='lines'></div>
+
+  <h2>Dots</h2>
+  <span id='dots'></span>
+
+  <script type='module'>
+    import { Lines, Dots } from './index.mjs'
+
+    const lines = new Lines({
+      target: document.getElementById('lines'),
+      props: {
+        size: '3em',
+        colour: 'SlateGrey'
+      }
+    })
+
+    const dots = new Dots({
+      target: document.getElementById('dots'),
+      props: {
+        size: '3em'
+      }
+    })
+  </script>
+</main>
+<details open>
+  <summary>View Source</summary>
+  <pre><code><script>document.write(document.getElementsByTagName('main')[0].outerHTML.replace(/\</g, '&lt;').replace(/\>/g, '&gt;'))</script></code></pre>
+</details>
+</body>
+</html>
