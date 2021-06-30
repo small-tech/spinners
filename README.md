@@ -20,8 +20,8 @@ Because sometimes you just need a simple spinner without a 5-tonne framework att
 
 If you just want the SVGs, you can grab them below (right click and save):
 
-  - [Lines](./lines.svg)
-  - [Dots](./dots.svg)
+  - [Lines](https://raw.githubusercontent.com/small-tech/spinners/main/lines.svg)
+  - [Dots](https://raw.githubusercontent.com/small-tech/spinners/main/dots.svg)
 
 <details>
   <summary><strong>SVG code (copy and paste)</strong></summary>
