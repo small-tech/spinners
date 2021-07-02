@@ -1,0 +1,18 @@
+{
+  "name": "flattener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-apng": "github:tomashubelbauer/node-apng",
+    "svg-png-converter": "0.0.9",
+    "svgson": "^5.2.1"
+  }
+}
