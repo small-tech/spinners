@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Document</title>
+  <style>
+    html { font-family: sans-serif;}
+    svg { background-color: transparent; display: block; }
+    button { font-size: 2em; }
+    p:first-of-type { font-size: 1.25em; font-style: italic; }
+  </style>
+</head>
+<body>
+  <h1>Hand-cranked SMIL-animated SVG icon rasteriser</h1>
+
+  <p>Just like mama used to make ’em!&trade;</p>
+
+  <p><strong>Instructions: (Do not use.)</strong> This is a manual, error-prone, generally wanky experiment/attempt to rasterise a SMIL-animated SVG (if you have a better way, please share). It worked well enough for these two icons. To use, right-click the SVG element in the web developer tools and save as PNG. Do this in a WebKit-based browser (e.g., Epiphany or Safari) to maintain the transparency of the background.</p>
+
+  <h2>Lines (frame <span id='linesFrame'>0</span> of 11)</h2>
+
+  <button onclick='linesNextFrame()'>Next frame</button>
+
+  <svg id="lines" stroke="currentColor" height="512px" viewBox="0 0 64 64"><g stroke-width="4" stroke-linecap="round"><line y1="12" y2="20" transform="translate(32,32) rotate(180)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(210)"><animate attributeName="stroke-opacity" dur="750ms" values="0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(240)"><animate attributeName="stroke-opacity" dur="750ms" values=".1;0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(270)"><animate attributeName="stroke-opacity" dur="750ms" values=".15;.1;0;1;.85;.7;.65;.55;.45;.35;.25;.15" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(300)"><animate attributeName="stroke-opacity" dur="750ms" values=".25;.15;.1;0;1;.85;.7;.65;.55;.45;.35;.25" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(330)"><animate attributeName="stroke-opacity" dur="750ms" values=".35;.25;.15;.1;0;1;.85;.7;.65;.55;.45;.35" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(0)"><animate attributeName="stroke-opacity" dur="750ms" values=".45;.35;.25;.15;.1;0;1;.85;.7;.65;.55;.45" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(30)"><animate attributeName="stroke-opacity" dur="750ms" values=".55;.45;.35;.25;.15;.1;0;1;.85;.7;.65;.55" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(60)"><animate attributeName="stroke-opacity" dur="750ms" values=".65;.55;.45;.35;.25;.15;.1;0;1;.85;.7;.65" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(90)"><animate attributeName="stroke-opacity" dur="750ms" values=".7;.65;.55;.45;.35;.25;.15;.1;0;1;.85;.7" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(120)"><animate attributeName="stroke-opacity" dur="750ms" values=".85;.7;.65;.55;.45;.35;.25;.15;.1;0;1;.85" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(150)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line></g></svg>
+
+  <h2>Dots (frame <span id='dotsFrame'>0</span> of 7)</h2>
+  <button onclick='dotsNextFrame()'>Next frame</button>
+
+  <svg id="dots" height="512px" fill="currentColor" viewBox="0 0 64 64"><g><circle cx="16" cy="32" stroke-width="0"><animate attributeName="fill-opacity" dur="750ms" values=".5;.6;.8;1;.8;.6;.5;.5" repeatCount="indefinite"></animate><animate attributeName="r" dur="750ms" values="3;3;4;5;6;5;4;3" repeatCount="indefinite"></animate></circle><circle cx="32" cy="32" stroke-width="0"><animate attributeName="fill-opacity" dur="750ms" values=".5;.5;.6;.8;1;.8;.6;.5" repeatCount="indefinite"></animate><animate attributeName="r" dur="750ms" values="4;3;3;4;5;6;5;4" repeatCount="indefinite"></animate></circle><circle cx="48" cy="32" stroke-width="0"><animate attributeName="fill-opacity" dur="750ms" values=".6;.5;.5;.6;.8;1;.8;.6" repeatCount="indefinite"></animate><animate attributeName="r" dur="750ms" values="5;4;3;3;4;5;6;5" repeatCount="indefinite"></animate></circle></g></svg>
+
+  <script>
+    const lines = document.getElementById('lines')
+    lines.pauseAnimations()
+    const dots = document.getElementById('dots')
+    dots.pauseAnimations()
+
+    const linesFrameOutput = document.getElementById('linesFrame')
+    const dotsFrameOutput = document.getElementById('dotsFrame')
+
+    let linesFrame = 0
+    let dotsFrame = 0
+
+    function linesNextFrame() {
+      lines.unpauseAnimations()
+      setTimeout(() => {
+        lines.pauseAnimations()
+        linesFrame++
+        if (linesFrame > 11) linesFrame = 0
+        linesFrameOutput.innerText = linesFrame
+      }, 62.5 /* 750ms animation duration / 12 frames */ )
+    }
+
+    function dotsNextFrame() {
+      dots.unpauseAnimations()
+      setTimeout(() => {
+        dots.pauseAnimations()
+        dotsFrame++
+        if (dotsFrame > 7) dotsFrame = 0
+        dotsFrameOutput.innerText = dotsFrame
+      }, 93.75 /* 750ms animation duration / 8 frames */)
+    }
+  </script>
+</body>
+</html>
