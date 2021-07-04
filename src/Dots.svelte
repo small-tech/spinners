@@ -2,7 +2,7 @@
   // Spinner SVG is from the Ionic Framework
   // (https://ionicframework.com/docs/api/spinner via https://codepen.io/ionic/pen/GgwVON)
   export let size = 32
-  export let colour = 'black'
+  export let colour = 'currentColor'
   export let show = true
 </script>
 
