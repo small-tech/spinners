@@ -25,7 +25,7 @@ node .
 ### Create a 512×512 pixel in medium orchid
 
 ```shell
-node --size 512px --colour mediumorchid
+node . --size 512px --colour mediumorchid
 ```
 
 ## Options
