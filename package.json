@@ -1,6 +1,6 @@
 {
   "name": "@small-tech/spinners",
-  "description": "Two indeterminate progress spinners, one with lines and the other with dots (available in animated SVG, JavaScript, and Svelte).",
+  "description": "Two indeterminate progress spinners, one with lines and the other with dots (available in animated SVG, animated PNG, JavaScript, and Svelte).",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",
   "main": "dist/index.js",
@@ -23,10 +23,28 @@
     "svg",
     "animated svg",
     "smil",
-    "svelte"
+    "svelte",
+    "apng",
+    "png"
   ],
   "files": [
     "src",
     "dist"
-  ]
+  ],
+  "author": {
+    "name": "Aral Balkan",
+    "email": "aral@small-tech.org",
+    "url": "https://ar.al"
+  },
+  "funding": {
+    "type": "foundation",
+    "url": "https://small-tech.org/fund-us/"
+  },
+  "homepage": "https://github.com/small-tech/spinners",
+  "bugs": "https://github.com/small-tech/spinners/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/small-tech/spinners.git"
+  },
+  "license": "ISC"
 }
