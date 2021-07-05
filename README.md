@@ -86,7 +86,7 @@ The example below is functionally identical to the plain old JavaScript one, abo
 ```svelte
 <script>
   import { Lines } from '@small-tech/spinners'
-<script>
+</script>
 
 <Lines size='2em' colour='SlateGrey' />
 ```
