@@ -95,9 +95,9 @@ You can find a version of this example in the [examples/svelte](examples/svelte)
 
 ### Generate PNGs
 
-In an ideal world, animated SVGs (yes, even those that use SMIL animations – which are great, by the way) should be supported everywhere. Sadly, we don’t live in an ideal world. We live in a world where GitHub can <strike>mass-violate the copyright of free and open source projects</strike> do “AI pair programming” but cannot render a simple animated SVG properly.
+In an ideal world, animated SVGs (yes, even those that use [SMIL animations](https://developer.mozilla.org/en-US/docs/Web/SVG/SVG_animation_with_SMIL) – which are great, by the way) should be supported everywhere. Sadly, we don’t live in an ideal world. We live in a world where GitHub can <strike>mass-violate the copyright of free and open source projects</strike> implement “AI pair programming” but cannot render a simple animated SVG properly.
 
-So, if you’re viewing this readme on GitHub, what you’re seeing above are bitmap versions (animated PNGs) of the spinners exported using tiny scripts I wrote for that purpose.
+So, if you’re viewing this readme on GitHub, what you’re seeing above are bitmap versions (animated PNGs) of the spinners exported using tiny scripts I wrote for that purpose. The reason they’re a shade of blue is because, unlike the SVGs which default to using the `currentColor` of their context, I had to export [a colour that would work with acceptable contrast on both light and dark mode](https://web.archive.org/web/20160214165231/trace.wisc.edu/contrast-ratio-examples/PassingMidColorSamples_4-5to1.htm).
 
 They’re embedded as fallbacks withing `<foreignObject>` tags inside of the inline SVGs in the readme (so, for example, if you’re viewing them in [VSCodium](https://vscodium.com/), you will only see the SVG spinners, not two sets of spinners).
 
@@ -116,6 +116,16 @@ To see all options:
 node png/lines --help
 node png/dots --help
 ```
+
+If you’re interested in the nitty gritties of image manipulation, view the source of the [lines.js](png/lines.js) and [dots.js](png/dots.js) scripts to see an example of how to convert SVGs to animated PNGs in Node.js using the [svg-png-converter]() and [node-apng]() modules. 
+
+_(Yes, I know I should refactor the redundancies between those two scripts. No, I don’t have the time to do that now. And yes, I’ve already spent far more time than on this than any reasonable person should have.)_
+
+## Like this? Fund us!
+
+[Small Technology Foundation](https://small-tech.org) is a tiny, independent not-for-profit.
+
+We exist in part thanks to patronage by people like you. If you share [our vision](https://small-tech.org/about/#small-technology) and want to support our work, please [become a patron or donate to us](https://small-tech.org/fund-us) today and help us continue to exist.
 
 ## License
 
