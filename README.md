@@ -24,7 +24,7 @@ Because sometimes you just need a simple spinner without a 5-tonne framework att
 
 When including a spinner in your site or app, the element that contains your spinner should be set as an [ARIA live region](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) and provide meaningful, app-specific feedback on its current state.
 
-Learn more: [“It’s alive!”: Apps That Feed Back Accessibly](https://www.smashingmagazine.com/2015/04/its-alive-apps-that-feed-back-accessibly/), [More Accessible Skeletons](https://adrianroselli.com/2020/11/more-accessible-skeletons.html)
+__Learn more:__ [“It’s alive!”: Apps That Feed Back Accessibly](https://www.smashingmagazine.com/2015/04/its-alive-apps-that-feed-back-accessibly/), [More Accessible Skeletons](https://adrianroselli.com/2020/11/more-accessible-skeletons.html)
 
 
 ### Just the SVGs
