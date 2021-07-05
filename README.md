@@ -63,7 +63,7 @@ You can also use the spinners via plain old JavaScript:
   <div id='spinner'></div>
 
   <script type='module'>
-    import { Lines } from '@small-tech/spinners'
+    import { Lines } from 'https://unpkg.com/@small-tech/spinners@1.0.0/dist/index.mjs'
 
     const lines = new Lines({
       target: document.getElementById('spinner'),
@@ -102,6 +102,8 @@ So, if you’re viewing this readme on GitHub, what you’re seeing above are bi
 They’re embedded as fallbacks withing `<foreignObject>` tags inside of the inline SVGs in the readme (so, for example, if you’re viewing them in [VSCodium](https://vscodium.com/), you will only see the SVG spinners, not two sets of spinners).
 
 You can also use these scripts to generate your own animated PNG versions of the spinners, should you so desire.
+
+First, clone this repository, then:
 
 ```shell
 node png/lines
