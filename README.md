@@ -103,7 +103,15 @@ They’re embedded as fallbacks within `<foreignObject>` tags inside of the inli
 
 You can also use these scripts to generate your own animated PNG versions of the spinners, should you so desire.
 
-First, clone this repository, then:
+First, clone this repository. Then, install the dependencies:
+
+```shell
+cd png
+npm install
+cd ..
+```
+
+And run the scripts:
 
 ```shell
 node png/lines
