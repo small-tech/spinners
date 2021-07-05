@@ -2,9 +2,11 @@
 
 This package has two indeterminate progress spinners, one with lines:
 
-<picture>
+<!--
+  Embed SVG with animated PNG fallback because GitHub can
+  do AI pair programming but not animated SVGs, apparently.
+-->
 <svg stroke="currentColor" height="64" viewBox="0 0 64 64"><g stroke-width="4" stroke-linecap="round"><line y1="12" y2="20" transform="translate(32,32) rotate(180)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(210)"><animate attributeName="stroke-opacity" dur="750ms" values="0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(240)"><animate attributeName="stroke-opacity" dur="750ms" values=".1;0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(270)"><animate attributeName="stroke-opacity" dur="750ms" values=".15;.1;0;1;.85;.7;.65;.55;.45;.35;.25;.15" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(300)"><animate attributeName="stroke-opacity" dur="750ms" values=".25;.15;.1;0;1;.85;.7;.65;.55;.45;.35;.25" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(330)"><animate attributeName="stroke-opacity" dur="750ms" values=".35;.25;.15;.1;0;1;.85;.7;.65;.55;.45;.35" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(0)"><animate attributeName="stroke-opacity" dur="750ms" values=".45;.35;.25;.15;.1;0;1;.85;.7;.65;.55;.45" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(30)"><animate attributeName="stroke-opacity" dur="750ms" values=".55;.45;.35;.25;.15;.1;0;1;.85;.7;.65;.55" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(60)"><animate attributeName="stroke-opacity" dur="750ms" values=".65;.55;.45;.35;.25;.15;.1;0;1;.85;.7;.65" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(90)"><animate attributeName="stroke-opacity" dur="750ms" values=".7;.65;.55;.45;.35;.25;.15;.1;0;1;.85;.7" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(120)"><animate attributeName="stroke-opacity" dur="750ms" values=".85;.7;.65;.55;.45;.35;.25;.15;.1;0;1;.85" repeatCount="indefinite"></animate></line><line y1="12" y2="20" transform="translate(32,32) rotate(150)"><animate attributeName="stroke-opacity" dur="750ms" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1" repeatCount="indefinite"></animate></line></g><foreignObject><img src="./lines.png" width="64px"></foreignObject></svg>
-</picture>
 
 …and the other with dots:
 
@@ -91,6 +93,30 @@ The example below is functionally identical to the plain old JavaScript one, abo
 
 You can find a version of this example in the [examples/svelte](examples/svelte) folder.
 
+### Generate PNGs
+
+In an ideal world, animated SVGs (yes, even those that use SMIL animations – which are great, by the way) should be supported everywhere. Sadly, we don’t live in an ideal world. We live in a world where GitHub can <strike>mass-violate the copyright of free and open source projects</strike> do “AI pair programming” but cannot render a simple animated SVG properly.
+
+So, if you’re viewing this readme on GitHub, what you’re seeing above are bitmap versions (animated PNGs) of the spinners exported using tiny scripts I wrote for that purpose.
+
+They’re embedded as fallbacks withing `<foreignObject>` tags inside of the inline SVGs in the readme (so, for example, if you’re viewing them in [VSCodium](https://vscodium.com/), you will only see the SVG spinners, not two sets of spinners).
+
+You can also use these scripts to generate your own animated PNG versions of the spinners, should you so desire.
+
+```shell
+node png/lines
+node png/dots
+```
+
+You can customise the size, colour, and frame multiplier (animation resolution) via options.
+
+To see all options:
+
+```shell
+node png/lines --help
+node png/dots --help
+```
+
 ## License
 
-[ISC](./license) ([Ionic’s SVGs are under MIT](./license))
+[ISC](./license) ([Ionic Framework’s spinners are under MIT](./license))
