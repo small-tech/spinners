@@ -13,22 +13,29 @@ npm install
 ### Get help
 
 ```shell
-node . --help
+node lines --help
+node dots --help
 ```
 
 ### Create a lines.png with default options
 
 ```shell
-node .
+node lines
 ```
 
-### Create a 512×512 pixel in medium orchid
+### Create a dots.png with default options
 
 ```shell
-node . --size 512px --colour mediumorchid
+node dots
 ```
 
-## Options
+### Create a 512×512 pixel lines spinner in medium orchid
+
+```shell
+node lines --size 512px --colour mediumorchid
+```
+
+## Options (common to both)
 
 ### `-V, --version`
 
