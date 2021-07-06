@@ -1,6 +1,6 @@
 {
   "name": "@small-tech/spinners",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Two indeterminate progress spinners, one with lines and the other with dots (available in animated SVG, animated PNG, JavaScript, and Svelte).",
   "svelte": "src/index.js",
   "module": "dist/index.mjs",

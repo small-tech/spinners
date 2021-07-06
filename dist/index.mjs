@@ -389,7 +389,7 @@ function create_if_block$1(ctx) {
 				each_blocks[i].c();
 			}
 
-			attr(g, "stroke-width", "4");
+			attr(g, "stroke-width", "6");
 			attr(g, "stroke-linecap", "round");
 			attr(svg, "height", /*size*/ ctx[0]);
 			attr(svg, "stroke", /*colour*/ ctx[1]);
@@ -455,8 +455,8 @@ function create_each_block(ctx) {
 			attr(animate, "dur", "750ms");
 			attr(animate, "values", /*line*/ ctx[5].opacityKeyframes);
 			attr(animate, "repeatCount", "indefinite");
-			attr(line, "y1", "12");
-			attr(line, "y2", "20");
+			attr(line, "y1", "18");
+			attr(line, "y2", "29");
 			attr(line, "transform", "translate(32,32) rotate(" + /*line*/ ctx[5].angle + ")");
 		},
 		m(target, anchor) {
@@ -507,7 +507,7 @@ function create_fragment$1(ctx) {
 }
 
 function instance$1($$self, $$props, $$invalidate) {
-	let { size = 32 } = $$props;
+	let { size = "1em" } = $$props;
 	let { colour = "currentColor" } = $$props;
 	let { show = true } = $$props;
 
@@ -673,7 +673,7 @@ function create_fragment(ctx) {
 }
 
 function instance($$self, $$props, $$invalidate) {
-	let { size = 32 } = $$props;
+	let { size = "1em" } = $$props;
 	let { colour = "currentColor" } = $$props;
 	let { show = true } = $$props;
 
