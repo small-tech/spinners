@@ -1,7 +1,7 @@
 <script>
   // Spinner is based on the Ionic Framework
   // (https://ionicframework.com/docs/api/spinner via https://codepen.io/ionic/pen/GgwVON)
-  export let size = 32
+  export let size = '32px'
   export let colour = 'currentColor'
   export let show = true
 
@@ -25,9 +25,9 @@
 
 {#if show}
   <svg height={size} stroke={colour} viewBox="0 0 64 64">
-    <g stroke-width="4" stroke-linecap="round">
+    <g stroke-width="6" stroke-linecap="round">
       {#each lines as line}
-        <line y1="12" y2="20" transform="translate(32,32) rotate({line.angle})">
+        <line y1="18" y2="29" transform="translate(32,32) rotate({line.angle})">
           <animate attributeName="stroke-opacity" dur="750ms" values={line.opacityKeyframes} repeatCount="indefinite"></animate>
         </line>
       {/each}

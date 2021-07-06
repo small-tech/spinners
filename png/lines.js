@@ -64,9 +64,9 @@ const svgs = []
 
 for (let frameIndex = 0; frameIndex < frameCount; frameIndex++) {
   let svg = `<svg width="${size}" height="${size}" stroke="${colour}" viewBox="0 0 64 64">
-    <g stroke-width="4" stroke-linecap="round">`
+    <g stroke-width="6" stroke-linecap="round">`
   lines.forEach((line, lineIndex) => {
-    svg += `<line y1="12" y2="20" transform="translate(32,32) rotate(${line.angle})" stroke-opacity="${opacityFor(frameIndex, lineIndex)}"></line>`
+    svg += `<line y1="18" y2="29" transform="translate(32,32) rotate(${line.angle})" stroke-opacity="${opacityFor(frameIndex, lineIndex)}"></line>`
   })
   svg += `
     </g>
